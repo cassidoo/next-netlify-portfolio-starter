@@ -3,21 +3,16 @@ export default function ContactForm() {
     <form name="contact" action="/success" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
       <p>
-        <label>
-          Your Name: <br />
-          <input type="text" name="name" />
-        </label>
+        <label htmlFor="yourname">Your Name:</label>
+        <input type="text" name="name" id="yourname" />
       </p>
       <p>
-        <label>
-          Your Email: <input type="email" name="email" />
-        </label>
+        <label htmlFor="youremail">Your Email: </label>{' '}
+        <input type="email" name="email" id="youremail" />
       </p>
       <p>
-        <label>
-          Message: <br />
-          <textarea name="message"></textarea>
-        </label>
+        <label htmlFor="yourmessage">Message: </label>
+        <textarea name="message" id="yourmessage"></textarea>
       </p>
       <p>
         <button type="submit">Send</button>

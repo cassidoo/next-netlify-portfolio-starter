@@ -2,34 +2,22 @@ import Head from 'next/head'
 
 import Nav from '@components/Nav'
 import Header from '@components/Header'
-import Card from '@components/Card'
 import Footer from '@components/Footer'
 
-export default function Home({ items }) {
+export default function Item({ title, description, image }) {
   return (
     <div className="container">
       <Head>
-        <title>My Portfolio Example</title>
+        <title>My Portfolio | {title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Nav />
 
       <main>
-        <Header text="Welcome to my portfolio!" />
-
-        <div className="cards">
-          {items?.length &&
-            items.map((i) => {
-              return (
-                <Card
-                  key={i.title}
-                  title={i.title}
-                  picture={i.image}
-                  link={i.slug}
-                />
-              )
-            })}
-        </div>
+        <Header text={title} />
+        <p>{description}</p>
+        <img src={image} />
       </main>
 
       <Footer />
@@ -48,13 +36,6 @@ export default function Home({ items }) {
           flex: 1;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .cards {
-          display: flex;
-          flex-wrap: wrap;
           justify-content: center;
           align-items: center;
         }
@@ -78,17 +59,33 @@ export default function Home({ items }) {
   )
 }
 
-export async function getStaticProps() {
-  const portfolioData = await import(`../portfolio.json`)
+export async function getStaticProps({ ...ctx }) {
+  const portfolioData = await import(`../../portfolio.json`)
 
-  let slugs = []
-  portfolioData.items.map((i) => {
-    slugs.concat(i.slug)
+  let currentItem = portfolioData.items.filter((i) => {
+    return i.slug === ctx.params.item
   })
+
+  let { title, description, image } = currentItem[0]
 
   return {
     props: {
-      items: portfolioData.items,
+      title,
+      description,
+      image,
     },
+  }
+}
+
+export async function getStaticPaths() {
+  const portfolioData = await import(`../../portfolio.json`)
+  let slugs = portfolioData.items.map((i) => i.slug)
+  let paths = slugs.map((slug) => {
+    return { params: { item: slug } }
+  })
+
+  return {
+    paths,
+    fallback: false,
   }
 }
