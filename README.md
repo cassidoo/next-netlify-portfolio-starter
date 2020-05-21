@@ -1,10 +1,10 @@
 # Next + Netlify Starter
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ed50f56e-4fc2-4c98-8b66-1e5074c6f3d3/deploy-status)](https://app.netlify.com/sites/next-starter/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9d73e58f-4104-4db1-93c9-2134a9ffc9e7/deploy-status)](https://app.netlify.com/sites/next-portfolio-starter/deploys)
 
-This is a [Next.js](https://nextjs.org/) v9.4.0 project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) and set up to be instantly deployed to [Netlify](https://url.netlify.com/Bk4UicocL)!
+This is a [Next.js](https://nextjs.org/) v9.4.0 project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) and set up to be instantly deployed to [Netlify](https://url.netlify.com/HJh3LCbjI)!
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cassidoo/next-netlify-starter&utm_source=github&utm_medium=nextstarter-cs&utm_campaign=devex)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cassidoo/next-netlify-portfolio-starter&utm_source=github&utm_medium=nextportfoliostarter-cs&utm_campaign=devex)
 
 (If you click this button, it will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify)
 
@@ -26,11 +26,11 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 **Option one:** One-click deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cassidoo/next-netlify-starter&utm_source=github&utm_medium=nextstarter-cs&utm_campaign=devex)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cassidoo/next-netlify-portfolio-starter&utm_source=github&utm_medium=nextportfoliostarter-cs&utm_campaign=devex)
 
 **Option two:** Manual clone
 
-1. Clone this repo: `git clone https://github.com/cassidoo/next-netlify-starter.git`
+1. Clone this repo: `git clone https://github.com/cassidoo/next-netlify-portfolio-starter.git`
 2. Navigate to the directory and run `npm run dev`
 3. Make your changes
-4. Connect to [Netlify](https://url.netlify.com/Bk4UicocL) manually (the `netlify.toml` file is the one you'll need to make sure stays intact to make sure the export is done and pointed to the right stuff)
+4. Connect to [Netlify](https://url.netlify.com/HJh3LCbjI) manually (the `netlify.toml` file is the one you'll need to make sure stays intact to make sure the export is done and pointed to the right stuff)
