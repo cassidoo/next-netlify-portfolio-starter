@@ -1,20 +1,28 @@
 import Head from 'next/head'
+
+import Nav from '@components/Nav'
 import Header from '@components/Header'
+import Card from '@components/Card'
 import Footer from '@components/Footer'
 
-export default function Home() {
+export default function Home({ items }) {
   return (
     <div className="container">
       <Head>
         <title>My Portfolio Example</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Nav />
 
       <main>
         <Header text="Welcome to my portfolio!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+
+        <div className="cards">
+          {items?.length &&
+            items.map((i) => {
+              return <Card key={i.title} title={i.title} picture={i.image} />
+            })}
+        </div>
       </main>
 
       <Footer />
@@ -37,11 +45,11 @@ export default function Home() {
           align-items: center;
         }
 
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
+        .cards {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
         }
       `}</style>
 
@@ -61,4 +69,14 @@ export default function Home() {
       `}</style>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const portfolioData = await import(`../portfolio.json`)
+
+  return {
+    props: {
+      items: portfolioData.items,
+    },
+  }
 }
